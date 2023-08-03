@@ -1,0 +1,8 @@
+{% macro richTextLinks(rich_text, classes) %}{% spaceless %}
+	{{ rich_text|replace('/<a (href="[^"]*")>([^<]*)<\\\/a>/', '<a $1 class="' ~ classes ~ '" target="_blank"><span><font>$2</font></span></a>')|raw }}
+{% endspaceless %}{% endmacro %}
+
+
+{% macro link(url, text, mods) -%}
+	<a href="{{ url }}" class="link {{- mods ?? '' }}"><span><font>{{ text|raw }}</font></span></a>
+{%- endmacro %}

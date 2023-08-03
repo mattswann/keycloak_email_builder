@@ -1,0 +1,22 @@
+{% set weight_list = {
+	'200': 'Thin',
+	'300': 'Light',
+	'400': 'Regular',
+	'500': 'Medium',
+	'700': 'Bold',
+	'900': 'Black'
+} %}
+
+{% set style_list = { 'normal': '', 'italic': 'Italic' } %}
+
+<style>
+	{% for weight_number, weight_name in weight_list %}
+		{% for style_value, style_name in style_list %}
+			@font-face {
+				font-family: 'Good Sans';
+				font-style: {{ style_value }};
+				font-weight: {{ weight_number }};
+			}
+		{% endfor %}
+	{% endfor %}
+</style>

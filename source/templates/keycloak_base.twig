@@ -1,0 +1,22 @@
+{% extends 'layouts/base.twig' %}
+
+{% set layout__title = 'Lagoon - the web application for delivery platform for Kubernetes' %}
+{% set layout__preview = 'Lagoon - the web application for delivery platform for Kubernetes' %}
+
+{% set layout__header_text = '' %}
+
+{% set layout__hero_image = 'full-width.jpeg' %}
+{% set layout__hero_title = 'Lagoon - the web application for delivery platform for Kubernetes' %}
+
+
+
+{% set body %} 
+
+<p class="body_text"> <#nested> </p>
+
+{% endset %}
+
+
+{% block body %}
+{{ body }}
+{% endblock %}
